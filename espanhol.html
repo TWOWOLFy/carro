@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Carro teste</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var marqueeElements = $("marquee"); // Seleciona todos os elementos <marquee>
+        var possibleSpeeds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]; // Velocidades possíveis
+
+        marqueeElements.each(function() {
+            // Seleciona e remove uma velocidade aleatória do array de possíveis velocidades
+            var randomIndex = Math.floor(Math.random() * possibleSpeeds.length);
+            var randomSpeed = possibleSpeeds.splice(randomIndex, 1)[0];
+
+            // Define a velocidade aleatória para o marquee atual
+            $(this).attr("scrollamount", randomSpeed);
+
+            // Se o array de possíveis velocidades estiver vazio, reinicializa para evitar erros
+            if (possibleSpeeds.length === 0) {
+                possibleSpeeds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+            }
+        });
+    });
+</script>
+</head>
+<body background="estradinha.jpeg">
+<marquee direction="right">
+    <img src="th.png" width="60"><br><br><br>
+</marquee>
+<marquee direction="right">
+    <img src="carrão.png" width="50">
+</marquee>
+
+<br><br><br><br><br>
+<marquee direction="right">
+    <img src="carro foda.png" width="50">
+</marquee>
+<br>
+<marquee direction="right">
+    <img src="carro sla.png" width="50">
+</marquee>
+<br><br><br><br><br>
+<marquee direction="right">
+    <img src="amarelo.png" width="50">
+</marquee>
+<marquee direction="right"><br><br>
+    <img src="mapa.png" width="50">
+</marquee>
+
+</marquee>
+</body>
+</html>
